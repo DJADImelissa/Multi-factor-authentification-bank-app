@@ -1,0 +1,12 @@
+<form method="POST">
+    {{ form.hidden_tag() }}    
+
+    {{ form.question.label() }}
+    {{ question.question}} ?
+    
+    {{ form.reponse.label() }}
+    {{ form.reponse(id="thirdans") }}
+    
+    {{ form.submit( class="btnText") }} 
+
+</form>

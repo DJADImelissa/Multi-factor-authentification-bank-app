@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../static/styles/auth.css">
+    
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--<title>Responsive Regisration Form </title>--> 
+</head>
+<body>
+    <div id="lfouk">
+        <img id="logo" src="../static/img/logo.png">
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+       {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+              <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+          </div>
+       {% endfor %}
+    {% endif %}
+  {% endwith %}
+    
+    <div class="container">
+        <header>
+            <h5>Transactions Authentification<span>.</span></h5>
+            <p id="up">You have reached the limit of 1000000 DZD ! <br>
+                Please authentify yourself :)</p>
+        </header>
+
+        <form method="POST">   
+            {{ form.hidden_tag() }}    
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Security questions</span>
+        
+                    <div class="fields">
+              
+                        
+        
+                        <div class="input-field">
+                                    
+                            {{ form.question.label() }}
+                            {{ question.question}} ?
+                      
+                        </div>
+        
+                        <div class="input-field">
+                            {{ form.reponse.label() }}
+                            {{ form.reponse(id="thirdans") }}
+                            
+                        </div>
+                                
+                    </div>
+                    <div class="details family">
+                        <div class="buttons">
+                            <button >
+                                {{ form.submit( class="btnText") }} 
+                                
+                          
+                            </button>
+                        </div> 
+                </div>
+            </div>
+            
+        </form>
+        
+    </div>
+    <footer id="footer">    </footer>
+</body>
+
+</html

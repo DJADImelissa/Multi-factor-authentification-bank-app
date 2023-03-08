@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../static/styles/signup.css">
+    
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--<title>Responsive Regisration Form </title>--> 
+</head>
+<body>
+    <div id="lfouk">
+        <img id="logo" src="../static/img/logo.png">
+    </div>
+    
+    <div class="container">
+        <header>
+            <h5>Sign up<span>.</span></h5>
+            <p id="up">Hi, Welcome to our  team !</p>
+        </header>
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form first">
+                <div>
+                    <span class="reg-sp1 r1"></span>
+                    <span class="reg-sp2"></span>
+                    <span class="reg-sp3"></span>
+                    <h6 class="reg-t1 t1">Registration</h6>
+                    <h6 class="reg-t2">Authentification</h6>
+                    <h6 class="reg-t3">Confirmation</h6>
+                </div>
+                
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            {{ form.first_name.label() }}
+                            {{ form.first_name(id="firstName", placeholder="Enter first name") }}
+                
+                        </div>
+
+                        <div class="input-field">
+                            {{ form.last_name.label() }}
+                            {{ form.last_name(id="lastName", placeholder="Enter last name") }}
+                
+                        </div>
+
+                       
+
+                        <div class="input-field">
+                            {{ form.email_address.label() }}
+                            {{ form.email_address( placeholder="Enter your email") }}
+                
+                        </div>
+
+                        <div class="input-field">
+                            {{ form.numero.label() }}
+                            {{ form.numero( placeholder="Enter your phone number") }}
+                            
+                        </div>
+
+                        <div class="input-field">
+                            
+                            {{ form.password1.label() }}
+                            {{ form.password1(id="password", placeholder="Enter password") }}
+
+                        </div>
+
+                        <div class="input-field">
+                            {{ form.password2.label() }}
+                            {{ form.password2(id="confirmPassword" ,placeholder="Confirm password")}}
+                
+                        </div>
+                        <div class="input-field">
+                            {{ form.question1.label(placeholder="Choose the first question") }}
+                            {{ form.question1(id="questions1" ,placeholder="Choose the first question")}}
+
+                            {{ form.reponse1.label(placeholder="Answer") }}
+                            {{ form.reponse1(id="firstans" ,placeholder="Ansewer")}}
+                       
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                <p id="down">You already have an account?<a id="sign-a" href="./login.html">Login</a></p>
+               
+            </div>
+            
+            <div class="form second">
+                <div>
+                    <span class="reg-sp1"></span>
+                    <span class="reg-sp2 r2"></span>
+                    <span class="reg-sp3"></span>
+                    <h6 class="reg-t1">Registration</h6>
+                    <h6 class="reg-t2 t2">Authentification</h6>
+                    <h6 class="reg-t3">Confirmation</h6>
+                </div>
+                    <div class="details address">
+                        <span class="title">Security questions</span>
+    
+                        <div class="fields">
+                            <div class="input-field">
+                                {{ form.question1.label(placeholder="Choose the first question") }}
+                                {{ form.question1(id="questions1" ,placeholder="Choose the first question")}}
+
+                                {{ form.reponse1.label(placeholder="Answer") }}
+                                {{ form.reponse1(id="firstans" ,placeholder="Ansewer")}}
+                           
+                            
+                            </div>
+<!--     
+                            <div class="input-field">
+                                <label for="secondans">Choose the first question</label>
+                                <select name="questions" id="questions2">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="hero">name of your childhood hero</option>
+                                    <option value="gfather">your paternal grandfather's first name</option>
+                                    <option value="teacher">name of your favorite teacher in school</option>
+                                    <option value="home">street name of your first childhood home</option>
+                                </select>
+                                <label for="seconans">Answer:</label>
+                                <input type="text" id="seconans" pattern="[a-zA-Z]+" placeholder="Answer" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label for="thirdqst">Custom question:</label>
+                                <input type="text" id="secondqst" pattern="[a-zA-Z]+" placeholder="Enter your question" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label for="thirdans">Answer:</label>
+                                <input type="text" id="thirdans" pattern="[a-zA-Z]+" placeholder="Answer" required>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                    <div class="details family">
+                        <div class="buttons">
+                            <div class="backBtn">
+                                <i class="uil uil-navigator"></i>
+                                <span class="btnText">Back</span>
+                            </div>
+                            <!-- modify the css of the button -->
+                            {{form.submit( class="btnText")}}
+
+
+                            <!-- <button class="submit">
+                                <span class="btnText">Submit</span>
+                                <i class="uil uil-navigator"></i>
+                                {{ form.submit(class="btnText")  }}
+                            </button> -->
+                        </div> 
+                    </div>
+            </div>
+        </form>
+        
+    </div>
+    <footer id="footer">    </footer>
+</body>
+
+<script>
+    const form = document.querySelector("form"),
+        nextBtn = form.querySelector(".nextBtn"),
+        nextBtn2 = form.querySelector(".nextBtn2"),
+        backBtn = form.querySelector(".backBtn"),
+        backBtn2 = form.querySelector(".backBtn2"),
+        allInput = form.querySelectorAll(".first input");
+
+
+nextBtn.addEventListener("click", ()=> {
+    allInput.forEach(input => {
+        if(input.checkValidity()){
+            form.classList.add('secActive');
+        }else{
+            form.classList.remove('secActive');
+        }
+    })
+})
+
+
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+backBtn2.addEventListener("click", () => form.classList.remove('thActive'));
+</script>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<link rel="stylesheet" href="../static/styles/dashboard.css"/>	
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	</head>
+	<body>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		   {% for category, message in messages %}
+			  <div class="alert alert-{{ category }}">
+				  <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+				  </button>
+				  {{ message }}
+			  </div>
+		   {% endfor %}
+		{% endif %}
+	  {% endwith %}
+		<div class="grid-container">
+		  <header class="header">
+			<p id="dash-title">
+				Dashboard 
+			</p>
+			<button id="btn_refresh" onclick="loadData()">
+				Refresh
+			</button>
+		  </header>
+		  <aside class="sidenav">		
+				<img id="logo" src="../static/img/logo white.png"/>			
+			<div id="menu">
+				<a href="{{ url_for('dashboard_page') }}">
+                    <div id="dash">
+                        <div class="bloc"></div>
+                        <img src="../static/img/dash.png" >
+                        <p>Dashboard</p>
+                    </div>
+                </a>
+				<a href="{{ url_for('transactions_page') }}">
+                    <div id="trans">
+                        <div class="bloc"></div>
+                        <img src="../static/img/transaction.png" >
+                        <p>Transaction</p>
+                    </div>
+                </a>
+				<div id="profile">
+                    <div class="bloc"></div>
+                    <img src="../static/img/user.png" alt="">
+                    <p>Profile</p>
+                </div>
+				<a href="{{ url_for('logout_page')}}">
+					<div id="logout">
+						<div class="bloc"></div>
+						<img src="../static/img/right.png" alt="">
+						<p>Logout</p>
+					</div>
+
+				</a>
+				
+			</div>		
+		  </aside>
+		  <main class="main">
+			<div class="card" id="card1">	
+				
+				<div class="card-content" id="cardTable">	
+					<canvas id="line-chart" width="540" height="320"></canvas>
+				</div>
+			</div>
+			<div class="card" id="card2">	
+				<img id="visa" src="../static/img/carte.png">	
+                <p id="user"> {{ current_user.first_name}} {{ current_user.last_name}}</p>
+                
+			</div>
+			<div class="card" id="card3">	
+				<p id="header_card3">Current balance</p>
+                <p id="amount">{{ current_user.owned_m}}DZD</p>
+			</div>
+			<div class="card" id="card4">		
+				<table >
+                    <tr>
+                        <th class="col_date">Sending date</th>
+                        <th class="col_reveiver">Receiver</th>
+                        <th class="col_amount">amount</th>
+                    </tr>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td class="col_date">
+                            {{transaction.date}}
+                        </td>
+                        <td class="col_reveiver">
+                            {{transaction.receiver}}
+                        </td>
+                        <td class="col_amount">
+                            {{transaction.montant}}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+			</div>
+		  </main>
+		  <footer class="footer"></footer>
+		</div>
+		
+		
+		
+		<!--
+		<div style="height: 300px; width: 300px; border:1px solid red; display:inline; float:left">
+			<div style="height: 100%; width: 100%; border:1px solid black">
+				<canvas id="bar-chart" width="300" height="300"></canvas>
+			</div>			
+		</div>
+		<div style="height: 300px; width: 300px; border:1px solid red; display:inline; float:left">
+			<div style="height: 100%; width: 100%; border:1px solid black">
+				<canvas id="line-chart" width="300" height="300"></canvas>
+			</div>			
+		</div>
+		
+		<div style="height: 300px; width: 300px; border:1px solid red; display:inline; float:left">
+			<div style="height: 100%; width: 100%; border:1px solid black">
+				<canvas id="pie-chart" width="300" height="300"></canvas>
+			</div>			
+		</div>
+		
+		<button onclick="loadData()">
+				Load
+		</button>-->
+		<script src="{{url_for('static', filename='script.js')}}"></script>
+	</body>
+    <script>
+		
+		new Chart(document.getElementById("line-chart"), {
+		  type: 'line',
+		  data: {
+			labels: ["jan","feb","mar","apr","may","june","july","sep","oct","nov","dec"],
+			datasets: [{ 
+				data: [65000,33000,50000,41000,42000,38000,23000,50500,12500,22300,1000],
+				label: "incomes",
+				borderColor: "#91C089",
+				fill: false,
+                pointStyle: 'dash'
+			  }, { 
+				data: [35000,43000,40000,51000,32000,28000,13000,40100,22500,32300,3200],
+				label: "outcomes",
+				borderColor: "#F48D8D",
+				fill: false,
+                pointStyle: 'dash'
+			  }
+			]
+		  },
+		  options: {
+			responsive: false,
+			maintainAspectRatio: true,		  
+			title: {
+			  display: true,
+			  text: 'Incomes and outcomes of 2022'
+			}
+		  }
+		});
+	</script>
+</html>

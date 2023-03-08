@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<link rel="stylesheet" href="../static/styles/transactions.css"/>	
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	</head>
+	<body>
+		<div class="grid-container">
+		  <header class="header">
+			<p id="dash-title">
+				Transactions 
+			</p>
+		  </header>
+		  <aside class="sidenav">		
+			<img id="logo" src="../static/img/logo white.png"/>			
+			<div id="menu">
+				<a href="./dashboard.html">
+                    <div id="dash">
+                        <div class="bloc"></div>
+                        <img src="../static/img/dash.png" >
+                        <p>Dashboard</p>
+                    </div>
+                </a>
+				<a href="./transactions.html">
+                    <div id="trans">
+                        <div class="bloc"></div>
+                        <img src="../static/img/transaction.png" >
+                        <p>Transaction</p>
+                    </div>
+                </a>
+				<div id="profile">
+                    <div class="bloc"></div>
+                    <img src="../static/img/user.png" alt="">
+                    <p>Profile</p>
+                </div>
+				<a href="./login.html">
+					<div id="logout">
+						<div class="bloc"></div>
+						<img src="../static/img/right.png" alt="">
+						<p>Logout</p>
+					</div>
+				</a>
+			</div>		
+		  </aside>
+		  <main class="main">
+			<div id="card1">
+				<div class="container">
+					<header>
+						<p id="up">Send money with all security !</p>
+					</header>
+			
+					<form action="POST">
+						<div class="form first">
+							
+							<div class="details personal">
+                                
+                                {{ form.hidden_tag() }}
+								<div class="fields">
+									<div class="input-field">
+										{{ form.receiver.label(placeholder="Receiver") }}
+                                        {{ form.receiver(id="firstName", placeholder="Enter first name") }}
+									</div>
+			
+									<div class="input-field">
+                                        {{ form.montant.label(placeholder="Amount") }}
+                                        {{ form.montant(id="amount" ,placeholder="0 DZD") }}
+									</div>
+			
+									<div class="input-field">
+                                        {{ form.code.label(placeholder="Bank code") }}
+                                        {{ form.code(id="code" ,placeholder="Enter your bank code") }}
+									</div>
+			
+								</div>
+							</div>
+                            {{ form.submit( )}}
+							
+						</div>
+						
+					</form>
+					
+				</div>
+			</div>
+			
+
+		  </main>
+		  <footer class="footer"></footer>
+		</div>
+	</body>
+
+</html>

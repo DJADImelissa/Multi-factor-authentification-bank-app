@@ -1,0 +1,97 @@
+
+<head>
+    <link rel="stylesheet" href="../static/styles/signup.css">
+</head>
+<body class="text-center">
+    <header id="header">
+        <img id="logo" src="../static/img/logo.png">
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+       {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+              <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+          </div>
+       {% endfor %}
+    {% endif %}
+  {% endwith %}
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <header>
+                <h5>Sign up<span>.</span></h5>
+                <p id="">Hi, Welcome to our  team !</p>
+            </header>
+            <div class="champ">
+                {{ form.first_name.label() }}
+                {{ form.first_name(id="firstName", placeholder="Enter first name") }}
+
+
+            </div>
+            <div class="champ">
+                {{ form.last_name.label() }}
+                {{ form.last_name(id="lastName", placeholder="Enter last name") }}
+                
+            </div>
+            <div class="champ">
+                {{ form.username.label() }}
+                {{ form.username(class="form-control", placeholder="User Name") }}
+                
+            </div>
+            <div class="champ">
+                {{ form.email_address.label() }}
+                {{ form.email_address(class="form-control", placeholder="Email Address") }}
+                
+            </div>
+            <div class="champ">
+                
+            {{ form.numero.label() }}
+            {{ form.numero( placeholder="Enter your phone number") }}
+            
+                
+            </div>
+            <div class="champ">
+                {{ form.password1.label() }}
+                {{ form.password1(class="form-control", placeholder="Password") }}
+    
+                
+            </div>
+            <div class="champ">
+
+
+
+     
+                {{ form.password2.label() }}
+                {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+                
+            </div>
+            <div class="champ">
+
+
+                {{ form.question1.label(placeholder="Choose the first question") }}
+                {{ form.question1(id="questions1" ,placeholder="Choose the first question")}}
+    
+                
+            </div>
+
+            <div class="champ">
+                {{ form.reponse1.label(placeholder="Answer") }}
+                {{ form.reponse1(id="firstans" ,placeholder="Ansewer")}}
+    
+                
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+            <div class="checkbox mb-3">
+               <h6>Already have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+
+        </form>
+    </div>
+</body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <title>Home</title>
+</head>
+<body>
+
+    <header id="header">
+        <a href="{{ url_for('home_page') }}"><img id="logo" src="../static/img/logo.png"></a>
+        <div id="buttons">
+            <a href="{{ url_for('login_page') }}"><button id="login">Log In</button></a>
+            <a href="{{ url_for('register_page') }}"><button id="signup">Sign Up</button></a>
+        </div>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+       {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+              <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+          </div>
+       {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+    <div id="container">
+        <div id="section">
+            <p id="title">Save your time <br>and <span class="vert">money</span></p>
+            <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Fusce eu <br>tellus lorem. In ut lacus malesuada,  eleifend ante sed, eleifend dui.<br> Vestibulum ante ipsum primis in faucibus orci luctus</p>
+        </div>
+        <img src="../static/img/man.png" id="man">
+    </div>
+
+</body>
+</html>

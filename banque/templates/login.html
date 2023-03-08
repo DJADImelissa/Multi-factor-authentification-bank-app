@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style_login.css">
+    <title>Login</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+       {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+              <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              {{ message }}
+          </div>
+       {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+    <header id="header">
+        <img id="logo" src="../static/img/logo.png">
+    </header>
+
+    <div id="container">
+        <h5>Login<span>.</span></h5>
+        <p id="up">Hi, Welcome back</p>  
+        <form  method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.username.label(id="log-e-l") }}
+            {{ form.username(id="log-email", placeholder="User Name") }}
+
+            <!-- <label for="log-email" id="log-e-l">E-mail</label>
+            <input type="email" name="" id="log-email" placeholder="E.g.xyz@gmail.com"> -->
+            {{ form.code.label(id="b-c-l") }}
+            {{ form.code(id="bank-code" ,placeholder="Enter your Bank code") }}
+
+            <!-- <label for="bank-code" id="b-c-l">Bank code</label>
+            <input type="text" name="" id="bank-code" placeholder="Enter your Bank code"> -->
+
+            {{ form.password.label(id="log-pass-l") }}
+            {{ form.password(id="log-password",placeholder="Enter your password") }}
+
+            <!-- <label for="log-password" id="log-pass-l">Password</label>
+            <input type="password" name="" id="log-password" placeholder="Enter your password"> -->
+            <a id="log-a1" href="">Forgot password?</a> 
+            {{ form.submit( id="login") }}  
+            <input type="submit"  id="login" value="Login">          
+        </form>
+        <p id="log-down">Not registered yet?</p>
+        <a id="log-a2" href="{{ url_for('register_page') }}">Create an account</a> 
+           
+    </div>
+    <footer>
+        
+    </footer>
+    
+</body>
+</html>

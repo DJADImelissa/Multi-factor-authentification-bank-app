@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+	margin:0px;
+	padding: 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns:210px 1fr;
+  grid-template-rows: 100px 1fr 30px;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+  height: 100vh;  
+}
+
+.header {
+  grid-area: header;
+  background-color: #ffffff;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  background-color: #000000;
+}
+
+
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+}
+
+/* Cards */
+.main {
+  padding:40px;
+  grid-area: main;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 550px  350px ;
+  grid-template-rows: 200px 100px;
+  grid-gap:40px;
+  position:relative;
+}
+#card1{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#card2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  
+  grid-row-start: 1;
+  grid-row-end: 1;
+  position: relative;
+}
+
+#card3 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: 1.5px solid #E4E4E4;
+    border-radius: 28px;
+    position: relative;
+}
+
+#card4 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+/*Card2*/
+#visa{
+    width: 100%;
+    position: absolute;
+}
+#user{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    color: #EEEEEE;
+    top: 163px;
+    left: 25px;
+}
+/*Card3*/
+#header_card3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #C8C8C8;
+    padding-left: 20px;
+    position: absolute;
+}
+#amount{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    color: #303030;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+
+}
+
+.card-header p{
+	margin: 0px;
+	padding:0px;
+	position:relative;
+	top:12px;
+	left:12px;
+}
+/*Card4*/
+#card4 table{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    color: #000000;
+}
+
+#card4 table th{
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+#card4 .col_date{
+    padding: 10px 70px;
+}
+#card4 .col_reveiver{
+    padding: 10px 150px;
+}
+#card4 .col_amount{
+    padding: 10px 90px;
+}
+
+
+
+/* Etape 10 */
+
+#menu{
+	margin-top:120px;
+	display: flex;
+	flex-direction: column;	
+    
+}
+
+#menu div{
+	
+	/*height:40px;
+	//padding:0px;
+	//margin-bottom:1px;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    opacity: 0.6;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.6);
+	transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+}
+
+
+#menu #dash{
+    opacity: 1;
+}
+#menu #logout{
+    margin-top: 20vw;
+    opacity: 1;
+}
+
+#menu div img{
+    height: 15px;
+}
+
+#menu div:hover{
+  opacity:1;
+  cursor: pointer;
+}
+
+#menu div p{	
+	font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    /* identical to box height */
+    letter-spacing: -0.04em;
+    color: #F9F9F9;
+    
+}
+
+#menu  a{
+    text-decoration: none;
+}
+
+#logo{
+	position: absolute;
+    width: 120px;
+    left: 20px;
+    top: 40px;
+}
+
+#dash-title{
+    
+	font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    /* identical to box height */
+    color: #303030;
+    margin-left: 40px ;
+    text-decoration: underline;
+    text-decoration-color:#899e5b ;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 3px;
+}
+
+
+button{
+	height:32px; 
+	cursor:pointer;				
+	border:0px; 
+	color:white;
+    opacity: 0.8;
+	font-weight: 500; 
+	border-radius: 100px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	font-size: 11pt;
+	
+}
+
+
+button:hover{
+	opacity:95%;
+  box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+}	
+
+button:active{
+	opacity:70%;
+	box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.3);
+	
+}	
+
+#btn_refresh{
+	background-color:#000000;
+	position:absolute;
+	top:3vw;
+	right:60px;
+	width:110px;
+    height: 40px;
+}
+
+

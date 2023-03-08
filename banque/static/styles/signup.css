@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    
+}
+form{
+    margin-top: 4vw;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 33%;
+    margin-bottom: 100px;
+}
+#header{
+    height: 70px;
+    border-bottom: 1.5px solid rgba(209, 209, 209, 0.635);
+}
+#logo{
+    position: absolute;
+    top:20px;
+    left: 210px;
+    width: 110px;
+}
+label{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.03em;
+    color: #303030;
+}
+.champ{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.champ input{
+    height: 45px;
+    padding-left: 20px;
+    border: 1.5px solid #E3E3E3;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    height: 50px;
+    background: #3E38F3;
+    border-radius: 6px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: #F9F9F9;
+    padding: 0;
+    padding-left: 0;
+    border: 0ch;
+}
+
+form header h5{
+    font-family: 'Poppins';
+    font-size: 30px;
+    letter-spacing: -0.03em;
+    color: #303030;
+    margin: 0;
+    margin-bottom: 10px;
+}
+form header span{
+    color: #92C32A;
+    font-size: 39px;
+}
+form header p{
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #303030;
+}
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.checkbox h6{
+    padding-left: 70px;
+    margin: 0%;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: #737373;
+}
+.btn-secondary{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 14px;
+    color: #3E38F3;
+}

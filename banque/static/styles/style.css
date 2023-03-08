@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;   
+}
+#header{
+    
+    padding-bottom: 1.5vw;
+    padding-left: 15%;
+    margin-top: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50%;
+    border-bottom: 3px solid #F9F9F9 ;
+}
+
+#logo{
+    width: 103px;
+    height: 25.13px;
+}
+#buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#signup{
+    width: 126px;
+    height: 42px;
+    background: #3e38f3;
+    opacity: 0.7;
+    border-radius: 6px;
+    border: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+    color: #F9F9F9;
+    cursor: pointer;
+}
+#header a #signup:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+#login{
+    width: 126px;
+    height: 42px;
+    background: #ffffff;
+    opacity: 0.7;
+    border: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+    color: #3E38F3;
+    cursor: pointer;
+}
+#header a #login:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 7vw;
+    margin-left: 5%;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+#section{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    
+}
+#title{
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight:bolder;
+    font-size: 54px;
+    line-height: 81px;
+    color: #303030;
+}
+.vert{
+    color: #3E38F3;
+    opacity: 0.7;
+}
+#description{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #4F4F4F;
+    line-height: 25px;
+}
